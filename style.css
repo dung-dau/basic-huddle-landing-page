@@ -1,0 +1,158 @@
+:root {
+  --clr-violet: hsl(257, 40%, 49%);
+  --clr-magenta: hsl(300, 69%, 71%);
+  --ff-poppy: 'Poppins', sans-serif;
+  --ff-open-sans: 'Open Sans', sans-serif;
+}
+
+/* Box sizing */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Reset margins */
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+p,
+figure,
+picture {
+  margin: 0;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  font-weight: 400;
+  font-size: 1rem;
+}
+
+h1 {
+  font-size: 1.5rem;
+}
+
+/* set up the body */
+body {
+  line-height: 1.5;
+  min-height: 100vh;
+  overflow-x: hidden;
+  background-color: var(--clr-violet);
+  background-image: url('./images/bg-mobile.svg');
+  background-repeat: no-repeat;
+  background-size: contain;
+  color: white;
+  text-align: center;
+}
+
+/* make images easier to work with */
+img,
+picture {
+  max-width: 100%;
+  display: block;
+}
+
+/* make form elements easier to work with */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+/* remove animations for people who have turned them off */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+.main-container {
+  padding: 2.5rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.logo {
+  width: 9rem;
+  margin-bottom: 3.5rem;
+}
+
+.first-container {
+  margin-bottom: 3.5rem;
+}
+
+.second-container > h1 {
+  margin-bottom: 0.5rem;
+}
+
+.poppy {
+  font-family: var(--ff-poppy);
+}
+
+.open-sans {
+  font-family: var(--ff-open-sans);
+}
+
+.bold {
+  font-weight: bold;
+}
+
+button {
+  padding: 0.75rem 5rem;
+  border-radius: 50px;
+  border: none;
+  color: var(--clr-violet);
+  background-color: white;
+  margin-top: 2.5rem;
+}
+
+button:hover {
+  background-color: var(--clr-magenta);
+  color: white;
+}
+
+@media screen and (min-width: 440px) {
+  body {
+    background-image: url('./images/bg-desktop.svg');
+  }
+
+  h1 {
+    font-size: 3rem;
+  }
+
+  p {
+    font-size: 1.25rem;
+  }
+
+  .main-container {
+    flex-direction: row;
+    align-items: center;
+    min-height: 100vh;
+    padding: 0 4rem;
+    text-align: left;
+  }
+
+  .first-container {
+    flex: 1;
+    margin: 0;
+    margin-right: 3rem;
+  }
+
+  .second-container {
+    flex: 1;
+  }
+}
