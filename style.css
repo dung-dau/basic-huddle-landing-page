@@ -150,25 +150,12 @@ button:hover {
   }
 }
 
-/* Second Mobile Large breakpoint */
-@media screen and (min-width: 655px) {
+/* generic tablet and rotated phone styles */
+@media screen and (min-width: 653px) {
   body {
     background-image: url('./images/bg-desktop.svg');
   }
 
-  .logo-container {
-    width: 65%;
-    margin-bottom: 0.75rem;
-  }
-
-  .mockup-container {
-    width: 65%;
-    margin-bottom: 1em;
-  }
-}
-
-/* generic tablet styles */
-@media screen and (min-width: 768px) {
   .main-container {
     flex-direction: row;
   }
