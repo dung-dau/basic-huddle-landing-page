@@ -68,37 +68,7 @@ select {
   font: inherit;
 }
 
-/* remove animations for people who have turned them off */
-@media (prefers-reduced-motion: reduce) {
-  *,
-  *::before,
-  *::after {
-    animation-duration: 0.01ms !important;
-    animation-iteration-count: 1 !important;
-    transition-duration: 0.01ms !important;
-    scroll-behavior: auto !important;
-  }
-}
-
-.main-container {
-  padding: 2.5rem;
-  display: flex;
-  flex-direction: column;
-}
-
-.logo {
-  width: 9rem;
-  margin-bottom: 3.5rem;
-}
-
-.first-container {
-  margin-bottom: 3.5rem;
-}
-
-.second-container > h1 {
-  margin-bottom: 0.5rem;
-}
-
+/* UTILITY STYLES */
 .poppy {
   font-family: var(--ff-poppy);
 }
@@ -111,13 +81,35 @@ select {
   font-weight: bold;
 }
 
+/* COMPONENTS */
+.main-container {
+  min-height: 100vh;
+  padding: 0.75rem 2.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+
+.first-outer-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.logo {
+  width: 9rem;
+}
+
+.second-outer-container > h1 {
+  margin-bottom: 0.5rem;
+}
+
 button {
   padding: 0.75rem 5rem;
   border-radius: 50px;
   border: none;
   color: var(--clr-violet);
   background-color: white;
-  margin-top: 2.5rem;
+  margin-top: 1.5rem;
 }
 
 button:hover {
@@ -125,7 +117,123 @@ button:hover {
   color: white;
 }
 
-@media screen and (min-width: 440px) {
+/* Mobile Small to Mobile Medium breakpoint */
+@media screen and (min-width: 345px) {
+  .main-container {
+    padding: 4rem 2.5rem;
+    max-height: 100vh;
+  }
+
+  .logo-container {
+    margin-bottom: 1rem;
+  }
+}
+
+/* Mobile Large breakpoint */
+@media screen and (min-width: 485px) {
+  .logo-container {
+    margin-bottom: 0.5rem;
+  }
+
+  .first-outer-container {
+    align-items: center;
+  }
+
+  .logo-container {
+    width: 75%;
+    margin-bottom: 2rem;
+  }
+
+  .mockup-container {
+    width: 75%;
+    margin-bottom: 1em;
+  }
+}
+
+/* Second Mobile Large breakpoint */
+@media screen and (min-width: 655px) {
+  body {
+    background-image: url('./images/bg-desktop.svg');
+  }
+
+  .logo-container {
+    width: 65%;
+    margin-bottom: 0.75rem;
+  }
+
+  .mockup-container {
+    width: 65%;
+    margin-bottom: 1em;
+  }
+}
+
+/* generic tablet styles */
+@media screen and (min-width: 768px) {
+  .main-container {
+    flex-direction: row;
+  }
+
+  .first-outer-container {
+    flex: 1;
+    justify-content: center;
+  }
+
+  .logo-container {
+    width: 100%;
+  }
+
+  .mockup-container {
+    width: 100%;
+  }
+
+  .second-outer-container {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  button {
+    width: 65%;
+    align-self: center;
+  }
+}
+
+/* breakpoint for ipad tablets */
+@media screen and (min-width: 767px) and (min-height: 1024px) {
+  .main-container {
+    flex-direction: column;
+  }
+
+  .first-outer-container {
+    flex: 1;
+  }
+
+  .logo-container {
+    width: 80%;
+  }
+
+  .mockup-container {
+    width: 80%;
+  }
+
+  .second-outer-container {
+    flex: 3;
+    justify-content: space-around;
+  }
+
+  .second-outer-container > h1 {
+    font-size: 3rem;
+  }
+
+  .second-outer-container > p,
+  .second-outer-container > button {
+    font-size: 2rem;
+  }
+}
+
+/* Laptop Breakpoint */
+@media screen and (min-width: 1024px) {
   body {
     background-image: url('./images/bg-desktop.svg');
   }
@@ -146,13 +254,13 @@ button:hover {
     text-align: left;
   }
 
-  .first-container {
+  .first-outer-container {
     flex: 1;
     margin: 0;
     margin-right: 3rem;
   }
 
-  .second-container {
+  .second-outer-container {
     flex: 1;
   }
 }
